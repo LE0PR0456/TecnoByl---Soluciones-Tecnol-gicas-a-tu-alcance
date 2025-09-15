@@ -129,6 +129,8 @@ a:hover {
 .mobile-nav-links {
     list-style: none;
     text-align: center;
+    width: 100%;
+    padding: 0;
 }
 
 .mobile-nav-links li {
@@ -390,21 +392,26 @@ a:hover {
     }
 }
 
-/* Sección Quiénes Somos */
+/* Sección Quiénes Somos - MODIFICADA */
 .about-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-text {
     flex: 1;
+    max-width: 600px;
+    padding-right: 2rem;
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
+    text-align: left;
 }
 
 .about-image {
@@ -413,6 +420,11 @@ a:hover {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 9/16;
+    width: 100%;
+    max-width: 360px;
+    margin: 0;
+    align-self: flex-start;
 }
 
 .about-image img {
@@ -436,9 +448,15 @@ a:hover {
 @media (min-width: 992px) {
     .about-container {
         flex-direction: row;
+        align-items: flex-start;
     }
     .about-text {
         padding-right: 3rem;
+        padding-left: 0;
+    }
+    .about-image {
+        margin-left: 0;
+        margin-right: auto;
     }
 }
 
