@@ -22,3 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+            
+    // Obtener los valores del formulario
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+            
+     // Crear el mensaje para WhatsApp
+    let whatsappMessage = `Hola, soy ${name}.`;
+    whatsappMessage += ` ${message}`;
+            
+    // Codificar el mensaje para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+    // Crear el enlace de WhatsApp
+    const whatsappURL = `https://wa.me/584245427700?text=${encodedMessage}`;
+            
+    // Redirigir a WhatsApp
+    window.open(whatsappURL, '_blank');
+});
